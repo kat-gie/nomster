@@ -46,7 +46,7 @@ function initMap() {
 <div class="clear"></div>
 
 
-<!-- Modal -->
+<!-- Comment Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -59,22 +59,23 @@ function initMap() {
         <div class="modal-body">
           <%= f.input :message %>
           <%= f.input :rating, as: :select, collection: Comment::RATINGS %>
+          <br />
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           <%= f.submit "Add a Comment", class: 'btn btn-primary' %>
         </div>
       <% end %>
-
+      </div>
     </div>
   </div>
 </div>
 
 
 <div class="col-xs-10 col-xs-offset-1">
-  <h1 class="pull-left">Comments</h1>
+  <h1 class="pull-left" id="comment-h1">Comments</h1>
   <!-- Button trigger modal -->
-  <button class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myModal">
+  <button type="button" class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myModal" id="comment-btn">
     Add a comment
   </button>
 </div>
@@ -91,3 +92,61 @@ function initMap() {
     </blockquote>
   </div>
 <% end %>
+
+<div class="clear"></div>
+
+
+
+<!-- Picture Modal -->
+<div class="modal fade" id="pictureModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="pictureModalLabel">Add a Picture</h4>
+      </div>
+        <div class="modal-body">
+        <%= simple_form_for @picture, :url => place_pictures_path(@place) do |f| %>
+        <div class="modal-body">
+            <%= f.input :picture %>
+            <%= f.input :caption %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <%= f.submit "Upload", class: 'btn btn-primary' %>
+          </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div class="col-xs-10 col-xs-offset-1">
+<h1 class="pull-left">Pictures</h1>
+<!-- Button trigger modal -->
+<button class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#pictureModal">
+  Add a photo
+</button>
+</div>
+
+<div class="clear"></div>
+
+<% @place.pictures.each do |picture| %>
+  <div class="col-xs-12 col-sm-6">
+    <%= image_tag picture.picture, class:"img-responsive" %>
+    
+    <%= picture.caption %>
+    
+  </div>
+<% end %>
+
+<!-- Picture modal end -->
+
+
+
+
+
+
+
+
+

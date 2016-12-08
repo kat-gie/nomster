@@ -6,7 +6,12 @@ root 'places#index'
 
 resources :places do
   resources :comments, only: :create 
+  resources :pictures, only: :create 
 end 
+
+resources :index do 
+  resources :pictures, only: :show
+end
 
 
 

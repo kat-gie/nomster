@@ -16,6 +16,8 @@ gem "geocoder", "1.3.4"
 
 gem "figaro", ">= 1.0.0"
 
+gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.9'
 # Use postgresql as the database for Active Record
