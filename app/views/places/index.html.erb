@@ -1,4 +1,4 @@
-<div class="col-xs-10 col-xs-offset-1">
+
 
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
@@ -12,19 +12,19 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="http://edibleindy.ediblefeast.com/sites/default/files/images/aggregator/dsc_0030.jpg" alt="..." class:"img-responsive">
+      <%= image_tag 'slider1.jpg', class: 'img-responsive' %>
       <div class="carousel-caption">
         Discover your next favorite cajun restaurant
       </div>
     </div>
     <div class="item">
-      <img src="https://static01.nyt.com/images/2014/01/16/dining/recipes-shrimpgumbo/recipes-shrimpgumbo-superJumbo.jpg" alt="..." class:"img-responsive">
+      <%= image_tag 'slider2.jpg', class: 'img-responsive' %>
       <div class="carousel-caption">
         Leave reviews and tips on local favorites
       </div>
     </div>
     <div class="item">
-      <img src="http://www.kitchenbelleicious.com/wp-content/uploads/2012/05/20120506_187.jpg" alt="..." class:"img-responsive">
+      <%= image_tag 'slider3.jpg', class: 'img-responsive' %>
       <div class="carousel-caption">
         Find directions, hours, etc
     </div>
@@ -46,7 +46,6 @@
 
 <br /> 
 <br />
-
 
 
 
@@ -89,6 +88,6 @@
 <% end %> 
 
 
-<div class="col-xs-8 col-xs-offset-2 brand-font">
+<div class="col-xs-8 col-xs-offset-2 brand-font booyah-box">
 <%= will_paginate @places %>
 </div>
