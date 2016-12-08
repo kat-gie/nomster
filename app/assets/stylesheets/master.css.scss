@@ -21,7 +21,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body {
-  background: url('/assets/cloth_alike.png');
+  background: url('/assets/bg.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; 
+  background-size: 100% 100%;
   font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
 }
 
