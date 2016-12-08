@@ -52,7 +52,7 @@ function initMap() {
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Add a comment</h4>
+        <h4 class="modal-title" id="myModalLabel">Add your review</h4>
       </div>
       <%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
 
@@ -63,7 +63,7 @@ function initMap() {
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <%= f.submit "Add a Comment", class: 'btn btn-primary' %>
+          <%= f.submit "Submit", class: 'btn btn-primary' %>
         </div>
       <% end %>
       </div>
@@ -72,13 +72,13 @@ function initMap() {
 </div>
 
 
-<div class="col-xs-10 col-xs-offset-1">
-  <h1 class="pull-left" id="comment-h1">Comments</h1>
+<div class="booyah-box col-xs-10 col-xs-offset-1">
+  <h1 class="pull-left" id="comment-h1">Reviews</h1>
   <!-- Button trigger modal -->
   <button type="button" class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myModal" id="comment-btn">
-    Add a comment
+    Add your review
   </button>
-</div>
+
 <div class="clear"></div>
 
 <% @place.comments.each do |comment| %>
@@ -92,6 +92,7 @@ function initMap() {
     </blockquote>
   </div>
 <% end %>
+</div>
 
 <div class="clear"></div>
 
@@ -121,25 +122,30 @@ function initMap() {
       </div>
     </div>
 
-<div class="col-xs-10 col-xs-offset-1">
-<h1 class="pull-left">Pictures</h1>
+
+<!-- Pictures Section -->
+<div class="booyah-box col-xs-10 col-xs-offset-1">
+<h1 class="pull-left">User Photos</h1>
 <!-- Button trigger modal -->
 <button class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#pictureModal">
   Add a photo
 </button>
-</div>
 
 <div class="clear"></div>
+<br />
+<br />
 
-<% @place.pictures.each do |picture| %>
-  <div class="col-xs-12 col-sm-6">
-    <%= image_tag picture.picture, class:"img-responsive" %>
-    
-    <%= picture.caption %>
-    
+<% @place.pictures.each do |picture| %> 
+  <div class="col-xs-12 col-sm-6"> 
+    <%= image_tag picture.picture, class:"place-pic"%>
+      <br />
+    <blockquote>
+      <%= picture.caption %>
+    </blockquote>
+      <br />
   </div>
 <% end %>
-
+</div>
 <!-- Picture modal end -->
 
 
