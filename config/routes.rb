@@ -9,6 +9,8 @@ resources :places do
   resources :pictures, only: :create 
 end 
 
+resources :users, only: :show
+
 resources :index do 
   resources :pictures, only: :show
 end
