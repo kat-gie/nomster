@@ -1,4 +1,4 @@
-Nomster 
+==Nomster 
 
 Nomster was created using the Ruby on Rails framework. Nomster is a Yelp clone, in which users can create a profile, post listings for restaurants they enjoy, as well as rate, comment on, and upload photos for existing listings. 
 
@@ -9,7 +9,5 @@ Features:
   - AWS (S3) is utilized for media storage (user photos)
 
 
-https://i.imgur.com/XjAoIWgm.png
-
-https://i.imgur.com/hl4rwYom.png
-
+https://i.imgur.com/XjAoIWgl.png
+https://i.imgur.com/hl4rwYol.png
